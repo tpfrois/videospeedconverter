@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Speed Converter</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img
+          src="./assets/images/logo-white.png"
+          alt="Logo Video Speed Converter"
+        />
+        <h1>Video Speed Converter</h1>
+      </a>
+    </header>
+    <main>
+      <div class="data">
+        <span>Video length in HH:MM:SS</span>
+        <input type="time" name="length" step="1" id="videoLength" />
+
+        <form>
+          <div class="speeds">
+            <input type="radio" name="speeds" value="0.25" />
+            <label>0,25x</label>
+            <input type="radio" name="speeds" value="0.5" />
+            <label>0,5x</label>
+            <input type="radio" name="speeds" value="0.75" />
+            <label>0,75x</label>
+            <input type="radio" name="speeds" value="1" checked="checked" />
+            <label>1x</label>
+            <input type="radio" name="speeds" value="1.25" />
+            <label>1,25x</label>
+            <input type="radio" name="speeds" value="1.5" />
+            <label>1,5x</label>
+            <input type="radio" name="speeds" value="1.75" />
+            <label>1,75x</label>
+            <input type="radio" name="speeds" value="2" />
+            <label>2x</label>
+          </div>
+          <button type="submit" id="convert">Convert</button>
+        </form>
+      </div>
+      <div class="results">
+        <span>Your converted video length:</span>
+        <div class="time">
+          <span id="hour"></span>
+          <span id="minutes"></span>
+          <span id="seconds"></span>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

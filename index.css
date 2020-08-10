@@ -1,0 +1,181 @@
+:root {
+  --color-light-blue: #343d70;
+  --color-dark-blue: #10143a;
+  --color-light-border: #565d91;
+  --color-text-blue: #57e3ea;
+  --color-text-red: #e4587c;
+}
+
+* {
+  font-family: "Bebas Neue", cursive;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    var(--color-light-blue),
+    var(--color-dark-blue)
+  );
+}
+
+header a {
+  text-decoration: none;
+  position: relative;
+}
+
+header img {
+  display: block;
+  margin: 0 auto;
+  padding-top: 2rem;
+  max-width: 75%;
+}
+
+header a h1 {
+  color: white;
+  font-size: 2.4rem;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.data {
+  max-width: 100%;
+  padding: 1rem 0;
+  border-top: thin solid var(--color-light-border);
+  border-bottom: thin solid var(--color-light-border);
+}
+
+.data span {
+  color: white;
+  display: block;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.data #videoLength {
+  display: block;
+  margin: 0 auto;
+  width: 75vw;
+  height: 10vh;
+
+  text-align: center;
+  text-indent: 30px;
+  font-size: 3.4rem;
+
+  border: thin solid var(--color-light-border);
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.1);
+
+  color: var(--color-text-blue);
+}
+
+.data form {
+  padding-top: 1rem;
+}
+
+.data form button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+
+  width: 15rem;
+  height: 3rem;
+
+  font-size: 2rem;
+
+  border: thin solid var(--color-light-border);
+  border-radius: 50px;
+  background: rgba(0, 0, 0, 0.1);
+
+  color: white;
+
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.data form button:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.speeds {
+  display: flex;
+  margin: 0px auto;
+  padding: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+  color: var(--color-text-red);
+}
+
+.speeds input {
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+  color: var(--color-text-blue);
+  transition: all 0.5s;
+  padding: 0 5px;
+}
+
+.results {
+  margin-top: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.results > span {
+  font-size: 2.1rem;
+  color: white;
+}
+
+.time {
+  font-size: 5rem;
+  color: var(--color-text-blue);
+}
+
+@media (min-width: 700px) {
+  header {
+    display: flex;
+    justify-content: center;
+  }
+  header img {
+    display: inline;
+    max-width: 500px;
+    padding-bottom: 2rem;
+  }
+  header a h1 {
+    border-left: thin solid var(--color-light-border);
+    padding: 15px;
+    display: inline;
+    vertical-align: 4.2rem;
+    font-size: 4rem;
+  }
+
+  .data span {
+    font-size: 1.5rem;
+  }
+
+  .data #videoLength {
+    height: 6rem;
+    font-size: 6rem;
+    cursor: pointer;
+  }
+
+  .speeds {
+    font-size: 2rem;
+  }
+  input[type="radio"] {
+    transform: scale(1.5);
+    margin: 10px;
+    color: red;
+  }
+}
