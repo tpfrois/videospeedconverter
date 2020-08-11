@@ -4,23 +4,28 @@ convertButton.addEventListener("click", function (e) {
   e.preventDefault();
 
   // get data values
-  let videoLength = document.querySelector("#videoLength").value;
+  let videoHours = document.getElementById("videoHours").value;
+  let videoMinutes = document.getElementById("videoMinutes").value;
+  let videoSeconds = document.getElementById("videoSeconds").value;
   let selectedSpeed = document.querySelector('input[name="speeds"]:checked')
     .value;
   // preventing invalid length values
-  !videoLength || videoLength == "00:00"
-    ? alert(
-        "Video length must be greater than 0 and HH:MM:SS format to convert"
-      )
-    : convertVideoLength(videoLength, selectedSpeed);
+  if (videoHours == "" && videoMinutes == "" && videoSeconds == "") {
+    alert("Please insert the video length to convert");
+  } else {
+    convertVideoLength(videoHours, videoMinutes, videoSeconds, selectedSpeed);
+  }
 });
 
-function convertVideoLength(length, speed) {
+function convertVideoLength(hours, minutes, seconds, speed) {
   // getting length in seconds
-  var [hours, minutes, seconds] = length.split(":").map(Number);
-  var lengthInSeconds = !seconds
-    ? hours * 3600 + minutes * 60
-    : hours * 3600 + minutes * 60 + seconds;
+  var lengthInSeconds =
+    Number(hours) * 3600 + Number(minutes) * 60 + Number(seconds);
+
+  if (lengthInSeconds <= 0) {
+    alert("Video length has to be grater than 0 ");
+    return false;
+  }
 
   var convertedLengthInSeconds = lengthInSeconds / speed;
 

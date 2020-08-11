@@ -55,21 +55,48 @@ header a h1 {
   padding-bottom: 5px;
 }
 
-.data #videoLength {
-  display: block;
-  margin: 0 auto;
-  width: 75vw;
-  height: 10vh;
+.videoLength {
+  display: flex;
+  justify-content: center;
+}
 
-  text-align: center;
-  text-indent: 30px;
-  font-size: 3.4rem;
+.videoLength label {
+  padding: 0 0.4rem;
+  font-size: 5rem;
+  color: var(--color-text-blue);
+}
 
+.videoLength input {
   border: thin solid var(--color-light-border);
-  border-radius: 50px;
+  border-radius: 5px;
   background: rgba(0, 0, 0, 0.1);
 
-  color: var(--color-text-blue);
+  max-width: 3.2rem;
+
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+
+  transition: all 0.5s;
+}
+
+.videoLength input:first-of-type {
+  width: 4rem;
+  max-width: 4rem;
+}
+
+.videoLength input:hover {
+  transform: scale(1.1);
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 .data form {
@@ -103,18 +130,16 @@ header a h1 {
 
 .speeds {
   display: flex;
-  margin: 0px auto;
-  padding: 0;
 
   align-items: center;
   justify-content: center;
 
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--color-text-red);
 }
 
 .speeds input {
-  margin: 0 5px;
+  margin: 0 4px;
   padding: 0;
   cursor: pointer;
 }
@@ -142,14 +167,33 @@ input[type="radio"]:checked + label {
   color: var(--color-text-blue);
 }
 
-@media (min-width: 700px) {
+@media (min-width: 700px) and (max-width: 999px) {
   header {
     display: flex;
     justify-content: center;
   }
   header img {
     display: inline;
-    max-width: 500px;
+    max-width: 200px;
+    padding-bottom: 2rem;
+  }
+  header a h1 {
+    border-left: thin solid var(--color-light-border);
+    padding: 15px;
+    display: inline;
+    vertical-align: 3rem;
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  header {
+    display: flex;
+    justify-content: center;
+  }
+  header img {
+    display: inline;
+    max-width: 400px;
     padding-bottom: 2rem;
   }
   header a h1 {
@@ -162,12 +206,6 @@ input[type="radio"]:checked + label {
 
   .data span {
     font-size: 1.5rem;
-  }
-
-  .data #videoLength {
-    height: 6rem;
-    font-size: 6rem;
-    cursor: pointer;
   }
 
   .speeds {

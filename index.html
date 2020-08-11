@@ -23,9 +23,38 @@
     <main>
       <div class="data">
         <span>Video length in HH:MM:SS</span>
-        <input type="time" name="length" step="1" id="videoLength" />
+
+        <div class="videoLength">
+          <input
+            type="number"
+            name="videoHours"
+            min="0"
+            id="videoHours"
+            oninput="validity.valid  ||(value='');"
+          />
+          <label for="videoHours">H</label>
+          <input
+            type="number"
+            name="videoMinutes"
+            min="0"
+            max="59"
+            id="videoMinutes"
+            oninput="validity.valid  ||(value='');"
+          />
+          <label for="videoMinutes">M</label>
+          <input
+            type="number"
+            name="videoSeconds"
+            min="0"
+            max="59"
+            id="videoSeconds"
+            oninput="validity.valid  ||(value='');"
+          />
+          <label for="videoSeconds">S</label>
+        </div>
 
         <form>
+          <span>Video speed</span>
           <div class="speeds">
             <input type="radio" name="speeds" value="0.25" />
             <label>0,25x</label>
